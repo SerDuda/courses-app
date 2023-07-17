@@ -1,0 +1,16 @@
+.header {
+    width: 100wh;
+    height: fit-content;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 220px;
+}

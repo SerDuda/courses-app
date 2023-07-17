@@ -1,0 +1,38 @@
+.card-container {
+    border: 1px solid green;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 15px auto;
+}
+
+.left__info {
+    width: 65%;
+}
+
+.left__info > h1 {
+    margin-bottom: 15px;
+}
+
+.right__info {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right__info > p {
+    margin-bottom: 10px;
+}
+
+.right__info > p:first-child {
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btn-show__course {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

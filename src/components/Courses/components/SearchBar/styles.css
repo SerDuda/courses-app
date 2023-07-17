@@ -1,0 +1,17 @@
+
+.main-search_bar-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 50%; */
+    gap: 100px;
+}
+
+.search-bar-input {
+    /* width: 20% !important; */
+    padding-right: 50%;
+}
+
+.navbar-btn {
+    margin-left: 100px;
+}

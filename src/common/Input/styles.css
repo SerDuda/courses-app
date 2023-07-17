@@ -1,0 +1,25 @@
+.container-input {
+    position: relative;
+    width: 100%;
+}
+
+.input {
+    border: 1px solid orange;
+    border-radius: 2px;
+    height: 30px;
+    width: 100%;
+    /* min-width: 50px; */
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+.input:focus {
+    outline: none;
+    border: 1px solid red;
+    box-shadow: 0 0 5px 2px red;
+}
+
+.label__value {
+    position: absolute;
+    top: -25px
+}
