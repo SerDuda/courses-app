@@ -7,6 +7,8 @@ import { Courses } from './components/Courses/Courses';
 import { useCallback, useState } from 'react';
 import { CreateCourse } from './components/CreateCourse/CreateCourse';
 import { OneTypeCard } from './components/Courses/components/CourseCard/types';
+import { Registration } from './components/Registration/Registration';
+import { Login } from './components/Login/Login';
 
 export const mockedCoursesList = [
   {
@@ -68,12 +70,12 @@ function App() {
     setIsCourses((prev) => !prev)
   }, [setIsCourses])
 
-  
+
   return (
     <>
       <Header />
       <div className='main-container'>
-        {
+        {/* {
           isCourses ?
             <Courses handleChangeScreen={handleChangeScreen}
               coursesList={coursesList}
@@ -82,7 +84,8 @@ function App() {
               handleChangeScreen={handleChangeScreen}
               setCoursesList={setCoursesList}
             />
-        }
+        } */}
+        <Login/>
       </div>
     </>
   );
