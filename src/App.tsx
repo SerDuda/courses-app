@@ -11,6 +11,8 @@ import { CreateCourse } from './components/CreateCourse/CreateCourse';
 import MainLayout from './layouts/MainLayout';
 
 import { Context } from './context/Context';
+import { Registration } from './components/Registration/Registration';
+import { Login } from './components/Login/Login';
 
 
 
@@ -24,8 +26,10 @@ function App() {
     <Context>
       <Routes>
         <Route path='/' element={<MainLayout />}>
-          <Route index element={<Navigate to='/courses' />} />
-          <Route path='/courses' index element={<Courses />} />
+          <Route index element={<Navigate to='/registration' />} />
+          <Route path='/registration' element={<Registration />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/courses' element={<Courses />} />
           <Route path='/courses/:courseId' element={<CourseInfo />} />
           <Route path='/courses/add' element={<CreateCourse/>} />
         </Route>

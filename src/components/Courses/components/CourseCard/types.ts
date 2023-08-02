@@ -10,8 +10,3 @@ export type OneTypeCard = {
 export type TypeCard = {
     card: OneTypeCard;
 }
-
-export type Author = {
-    id: string,
-    name: string,
-}

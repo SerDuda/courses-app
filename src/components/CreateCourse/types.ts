@@ -7,3 +7,8 @@
 //     setCoursesList?: Dispatch<SetStateAction<OneTypeCard[]>>;
 //     // setCoursesList: React.Dispatch<React.SetStateAction<OneTypeCard[]>>
 // }
+
+export type Author = {
+    id: string,
+    name: string,
+}

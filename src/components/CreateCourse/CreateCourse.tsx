@@ -4,15 +4,17 @@ import { Input } from '../../common/Input/Input';
 import './CreateCourse.css'
 import { mockedAuthorsList } from '../../context/Context'
 import { v4 } from 'uuid'
-import { Author, OneTypeCard } from '../Courses/components/CourseCard/types';
+import { OneTypeCard } from '../Courses/components/CourseCard/types';
 import { pipeDuration } from '../../helpers/pipeDuraction'
 import { getDate } from '../../helpers/dateGeneratop';
-// import { ICreateCourse } from './types';
-import { TContext } from '../../context/Context';
+import { Author } from './types';
+import { TContext } from '../../context/types';
 import {ContextCreate} from '../../context/Context'
+import { useNavigate } from 'react-router-dom';
 
 export const CreateCourse = () => {
     const {setCoursesList} = useContext<TContext>(ContextCreate)
+    const navigate = useNavigate()
     const [newCourse, setNewCourse] = useState({
         id: '',
         title: '',
@@ -81,6 +83,9 @@ export const CreateCourse = () => {
         }
     }
 
+    const backToAllCourses = () => {
+        navigate('/courses')
+    }
 
     const crateCourse = () => {
         if(newCourse.description.length <= 2) {
@@ -90,7 +95,8 @@ export const CreateCourse = () => {
         }else if (createNewAuthor.name.length <= 2) {
             alert("Please, fill in all fields")
         }else {
-            setCoursesList((el) => ([...el, {...newCourse, id: v4(), creationDate: getDate()}]))
+            setCoursesList((el) => ([...el, {...newCourse, id: v4(), creationDate: getDate()}]));
+            backToAllCourses()
             // handleChangeScreen()
         }
     }

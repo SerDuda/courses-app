@@ -1,6 +1,7 @@
 import { createContext } from "react";
 import { OneTypeCard } from "../components/Courses/components/CourseCard/types";
 import React from "react";
+import { ContextProps, TContext } from "./types";
 
 export const mockedCoursesList = [
     {
@@ -51,16 +52,8 @@ export const mockedAuthorsList = [
       id: '095a1817-d45b-4ed7-9cf7-b2417bcbf748',
       name: 'Valentina Larina'
     },
-  ]
+]
 
-export type TContext = {
-    coursesList: OneTypeCard[],
-    setCoursesList: React.Dispatch<React.SetStateAction<OneTypeCard[]>>
-}
-
-type ContextProps = {
-    children: React.ReactNode
-}
 
 export const ContextCreate = createContext({} as TContext)
 
