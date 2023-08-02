@@ -1,0 +1,39 @@
+.main-course-info {
+    width: 100%;
+    height: 100%;
+    padding: 15px 20px;
+}
+
+.container-info {
+    width: 100%;
+    height: 100%;
+}
+
+.container-info > h1 {
+    text-align: center;
+}
+
+.container-info > span {
+    cursor: pointer;
+}
+
+.info-course {
+    padding: 7% 0%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.left-side-course-info {
+    width: 55%;
+    height: 100%;
+}
+
+.right-side-course-info {
+    height: 100%;
+    width: 30%;
+}
+
+.right-side-course-info > p {
+    margin-bottom: 4%;
+}

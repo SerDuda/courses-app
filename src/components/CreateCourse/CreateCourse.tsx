@@ -1,15 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Button } from '../../common/Button/Button';
 import { Input } from '../../common/Input/Input';
 import './CreateCourse.css'
-import { mockedAuthorsList } from '../../App'
+import { mockedAuthorsList } from '../../context/Context'
 import { v4 } from 'uuid'
 import { Author, OneTypeCard } from '../Courses/components/CourseCard/types';
 import { pipeDuration } from '../../helpers/pipeDuraction'
 import { getDate } from '../../helpers/dateGeneratop';
-import { ICreateCourse } from './types';
+// import { ICreateCourse } from './types';
+import { TContext } from '../../context/Context';
+import {ContextCreate} from '../../context/Context'
 
-export const CreateCourse = ({ handleChangeScreen, setCoursesList }: ICreateCourse) => {
+export const CreateCourse = () => {
+    const {setCoursesList} = useContext<TContext>(ContextCreate)
     const [newCourse, setNewCourse] = useState({
         id: '',
         title: '',
@@ -88,7 +91,7 @@ export const CreateCourse = ({ handleChangeScreen, setCoursesList }: ICreateCour
             alert("Please, fill in all fields")
         }else {
             setCoursesList((el) => ([...el, {...newCourse, id: v4(), creationDate: getDate()}]))
-            handleChangeScreen()
+            // handleChangeScreen()
         }
     }
 

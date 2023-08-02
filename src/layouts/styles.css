@@ -1,0 +1,8 @@
+.main-container {
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid blue;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-top: 15px;
+}
