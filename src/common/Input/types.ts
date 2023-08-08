@@ -3,4 +3,5 @@ export type TInputProps = {
     placeholdetText: string;
     onChange?: (e: any) => void;
     valueText?: string | number;
+    name?: string
 }
