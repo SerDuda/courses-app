@@ -24,6 +24,7 @@ export const CreateCourse = () => {
         authors: []
     } as OneTypeCard)
 
+
     const [allAuthors, setAllAuthors] = useState(mockedAuthorsList)
     const [createTitleNewAuthor, setCreateTitleNewAuthor] = useState('')
     const [createNewAuthor, setCreateNewAuthor] = useState({ id: '', name: '' })
@@ -97,7 +98,6 @@ export const CreateCourse = () => {
         }else {
             setCoursesList((el) => ([...el, {...newCourse, id: v4(), creationDate: getDate()}]));
             backToAllCourses()
-            // handleChangeScreen()
         }
     }
 

@@ -17,7 +17,6 @@ export const Registration: React.FC = () => {
     const [formValue, setFormValue] = useState(newUser)
 
     const createNewUserName = (e: { target: { value: string } }) => {
-        // newUser.name = e.target.value
         setFormValue((el) => ({ ...el, name: e.target.value }))
     }
 
@@ -39,7 +38,6 @@ export const Registration: React.FC = () => {
                 'Content-Type': 'application/json',
             },
         }).then((res) => res.json())
-            .then((data) => console.log(data))
 
         navigate('/login')
     };
@@ -52,25 +50,9 @@ export const Registration: React.FC = () => {
                 <Input labelText="Name" placeholdetText="Enter name" name="name" valueText={formValue.name} onChange={createNewUserName} />
                 <Input labelText="Email" placeholdetText="Enter email" name="email" valueText={formValue.email} onChange={createNewUserEmail} />
                 <Input labelText="Password" placeholdetText="Enter password" name="password" valueText={formValue.password} onChange={createNewUserPassword} />
-                <Button buttonText="Registration" type="submit"
-                // onClick={stepToLogin}
-                />
+                <Button buttonText="Registration" type="submit"/>
                 <p>If you have an account you can <Link to='/login' style={{ textDecoration: 'none' }}>Login</Link></p>
             </form>
         </div>
     )
 };
-
-
-
-
-    // const [formValue, setFormValue] = useState({
-    //     name: '',
-    //     email: '',
-    //     password: ''
-    // })
-    // const createNewUser = (e: { target: { name: string; value: string; } }) => {
-    //     const { name, value } = e.target
-    //     setFormValue((el) => ({ ...el, [name]: value }))
-
-    // }

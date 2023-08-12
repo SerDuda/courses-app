@@ -25,14 +25,20 @@ export const Login: React.FC = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-        }).then((res) => res.json())
-            // .then((data) => console.log(data))
+        })
+        .then((data) => data.json())
 
+        const infoInLocalStorage = () => {
+            const data = localStorage.setItem('user', JSON.stringify(res))
+            return data
+        }
+        
         if(res.successful === true) {
-            navigate('/courses')            
+            infoInLocalStorage()
+            navigate('/courses')
         }else {
-            alert('not correct value')  
-        }  
+            alert('not correct value')
+        }
     }
     
 
