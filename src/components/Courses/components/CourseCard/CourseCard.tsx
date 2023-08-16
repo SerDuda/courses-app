@@ -3,7 +3,7 @@ import { Button } from "../../../../common/Button/Button";
 import './styles.css'
 import { getDate } from "../../../../helpers/dateGeneratop";
 import { showAuthors } from "../../../../helpers/showAutors";
-import { pipeDuration } from "../../../../helpers/pipeDuraction";
+import { pipeDuration } from "../../../../helpers/pipeDuration";
 import { mockedAuthorsList } from "../../../../context/Context"
 import { TypeCard } from "./types";
 import { useNavigate } from "react-router-dom";

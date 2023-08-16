@@ -1,13 +1,12 @@
 
 import './App.css';
 
-import { CourseInfo } from './components/CourseInfo/CourseInfo';
-
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { Courses } from './components/Courses/Courses';
-import { CreateCourse } from './components/CreateCourse/CreateCourse';
 import MainLayout from './layouts/MainLayout';
 
+import { CourseInfo } from './components/CourseInfo/CourseInfo';
+import { Courses } from './components/Courses/Courses';
+import { CreateCourse } from './components/CreateCourse/CreateCourse';
 import { Context } from './context/Context';
 import { Registration } from './components/Registration/Registration';
 import { Login } from './components/Login/Login';

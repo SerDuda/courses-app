@@ -2,9 +2,9 @@ import React from 'react'
 
 import './styles.css'
 import { useLocation, useNavigate } from 'react-router-dom';
-import {pipeDuration} from '../../helpers/pipeDuraction'
-import {mockedAuthorsList} from '../../context/Context'
-import {showAuthors} from '../../helpers/showAutors'
+import { pipeDuration } from '../../helpers/pipeDuration'
+import { mockedAuthorsList } from '../../context/Context'
+import { showAuthors } from '../../helpers/showAutors'
 
 export const CourseInfo: React.FC = () => {
     const navigate = useNavigate()
@@ -12,11 +12,11 @@ export const CourseInfo: React.FC = () => {
         navigate('/courses')
     }
 
-    const {state} = useLocation()
-   
-    
+    const { state } = useLocation()
+
+
     return (
-        <div  className='main-course-info'>
+        <div className='main-course-info'>
             <div className='container-info'>
                 <span onClick={handleBack}>{"< Back to courses"}</span>
                 <h1>{state.title}</h1>

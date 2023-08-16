@@ -5,15 +5,15 @@ import './CreateCourse.css'
 import { mockedAuthorsList } from '../../context/Context'
 import { v4 } from 'uuid'
 import { OneTypeCard } from '../Courses/components/CourseCard/types';
-import { pipeDuration } from '../../helpers/pipeDuraction'
+import { pipeDuration } from '../../helpers/pipeDuration'
 import { getDate } from '../../helpers/dateGeneratop';
 import { Author } from './types';
 import { TContext } from '../../context/types';
-import {ContextCreate} from '../../context/Context'
+import { ContextCreate } from '../../context/Context'
 import { useNavigate } from 'react-router-dom';
 
 export const CreateCourse = () => {
-    const {setCoursesList} = useContext<TContext>(ContextCreate)
+    const { setCoursesList } = useContext<TContext>(ContextCreate)
     const navigate = useNavigate()
     const [newCourse, setNewCourse] = useState({
         id: '',
@@ -31,7 +31,7 @@ export const CreateCourse = () => {
     const [courseAuthors, setCourseAuthors] = useState<Author[]>([])
 
     const getNewTitle = (e: { target: { value: string } }) => {
-        setNewCourse((el) => ({...el, title: e.target.value}))
+        setNewCourse((el) => ({ ...el, title: e.target.value }))
     }
 
     const getNewDescription = (e: { target: { value: string } }) => {
@@ -40,7 +40,7 @@ export const CreateCourse = () => {
 
     const getNewAuthor = (e: { target: { value: string } }) => {
         setCreateTitleNewAuthor(e.target.value)
-        setCreateNewAuthor((el) => ({ ...el,name: e.target.value, id: v4() }));
+        setCreateNewAuthor((el) => ({ ...el, name: e.target.value, id: v4() }));
     }
 
     const getCourseDuration = (e: { target: { value: number } }) => {
@@ -68,7 +68,7 @@ export const CreateCourse = () => {
         const filterAuthors = allAuthors.filter(el => el.id !== elem)
         setAllAuthors(filterAuthors)
 
-        setNewCourse((el) => ({...el, id: v4()}))
+        setNewCourse((el) => ({ ...el, id: v4() }))
     }
 
 
@@ -89,14 +89,14 @@ export const CreateCourse = () => {
     }
 
     const crateCourse = () => {
-        if(newCourse.description.length <= 2) {
+        if (newCourse.description.length <= 2) {
             alert("Please, fill in all fields")
-        }else if (newCourse.duration <= 1) {
+        } else if (newCourse.duration <= 1) {
             alert("Please, fill in all fields")
-        }else if (createNewAuthor.name.length <= 2) {
+        } else if (createNewAuthor.name.length <= 2) {
             alert("Please, fill in all fields")
-        }else {
-            setCoursesList((el) => ([...el, {...newCourse, id: v4(), creationDate: getDate()}]));
+        } else {
+            setCoursesList((el) => ([...el, { ...newCourse, id: v4(), creationDate: getDate() }]));
             backToAllCourses()
         }
     }
@@ -121,10 +121,10 @@ export const CreateCourse = () => {
                         <Input labelText='Author name' placeholdetText='Enter author name...' onChange={getNewAuthor} valueText={createTitleNewAuthor} />
                         <Button buttonText='Create author' onClick={addCeratedAuthorAllAuthors} />
                     </div>
-                    <div className='left-side-duraction'>
-                        <h3>Duraction</h3>
-                        <Input labelText='Duraction' placeholdetText='Enter your duraction' onChange={getCourseDuration} />
-                        <p>Duraction: <strong>{pipeDuration(newCourse.duration)}</strong> hours</p>
+                    <div className='left-side-duration'>
+                        <h3>Duration</h3>
+                        <Input labelText='Duration' placeholdetText='Enter your duration' onChange={getCourseDuration} />
+                        <p>Duration: <strong>{pipeDuration(newCourse.duration)}</strong> hours</p>
                     </div>
                 </div>
                 <div className='create-course-info-right-side'>
